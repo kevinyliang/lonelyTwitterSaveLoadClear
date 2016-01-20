@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/afs/ualberta.ca/home/k/l/kliang/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.5/686c608d1805b6d4d425ec4459e88164ffc85870/gson-2.5.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
+        <dex dex="/afs/ualberta.ca/home/k/l/kliang/cmput301/lab3/lonelyTwitterSaveLoad/app/build/intermediates/pre-dexed/debug/gson-2.5-4f570352a0f5392a940da5a7464f9a8e23d4032d.jar" />
+    </item>
+
+</items>
