@@ -61,7 +61,6 @@ public class LonelyTwitterActivity extends Activity {
 				tweets.add(latestTweet);
 				adapter.notifyDataSetChanged();
 				saveInFile();
-				/*finish();*/
 
 			}
 		});

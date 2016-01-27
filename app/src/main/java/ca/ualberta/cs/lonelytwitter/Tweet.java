@@ -7,6 +7,8 @@ import java.util.Date;
  */
 public abstract class Tweet {
     protected Date date;
+
+
     protected String message;
 
     public abstract Boolean checkImportant();
@@ -38,5 +40,13 @@ public abstract class Tweet {
     @Override
     public String toString(){
         return date.toString() + " | " + message; // override so the toString will display what we want
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public Date getDate() {
+        return date;
     }
 }
