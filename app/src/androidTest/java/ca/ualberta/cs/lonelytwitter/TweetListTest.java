@@ -2,7 +2,9 @@ package ca.ualberta.cs.lonelytwitter;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by kliang on 1/26/16.
@@ -65,19 +67,25 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
     public void testGetTweet(){
         TweetList tweets = new TweetList();
         ArrayList<Tweet> tweetHere=new ArrayList<Tweet>();
-        Tweet tweet = new NormalTweet("Test tweet");
-        Tweet tweet1 = new NormalTweet("new");
+        Date date;
+        date = new Date(1000,11,11);
+        Date date1;
+        date1=new Date(2000,22,22);
+        Tweet tweet = new NormalTweet("Test tweet", date);
+        Tweet tweet1 = new NormalTweet("new",date1);
+        ArrayList<Date> dates = new ArrayList<Date>();
+
+        dates.add(tweet.getDate());
+        dates.add(tweet1.getDate());
 
         tweets.add(tweet);
         tweets.add(tweet1);
 
-        tweetHere.add(tweet);
-        tweetHere.add(tweet1);
         ArrayList<Tweet> returnedList=tweets.getTweet();
         int size=returnedList.size();
         int i =0;
         while(i<size){
-            assertEquals(returnedList.get(i),tweetHere.get(i));
+            assertEquals(returnedList.get(i).getDate(),dates.get(i));
             i=i+1;
         }
     }

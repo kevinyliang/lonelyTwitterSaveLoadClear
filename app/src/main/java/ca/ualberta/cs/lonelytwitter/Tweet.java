@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by kliang on 1/12/16.
  */
-public abstract class Tweet {
+public abstract class Tweet{
     protected Date date;
 
 
