@@ -1,4 +1,4 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.lonelytwitter; //lower case usually unique contain company name
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,6 +14,7 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,7 +25,96 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+
+/**
+ *   @since 1
+ *   @author Kevin
+ *   This is the LonelyTwitter main activity.
+ *   This is responsible for getting input from user and save/load from file
+ *   There are different form of tweets.
+ *   @see importantTweet
+ *   @see NormalTweet
+ */
 public class LonelyTwitterActivity extends Activity {
+	/**
+	 * Documenting the immediate thing following (ArrayList)
+	 * This arrayList is for keeping the tweets and their date of posting. <br>
+	 * This is ... (description)
+	 * @see #loadFromFile();
+	 */
+	//Declares the variables.
+	//Initialize where you use them.
+	public ArrayList<String> listOfItems;
+
+
+	private int calculateTweetSize(){
+		return 1;
+	}
+	private String removeStopWords(String text){
+		return "";
+	}
+
+	/**
+	 * This starts the next activity which is ...
+	 *  The @param talks about the parameter.
+	 * @param intent this is the intent to be run immediately after hitting "start" button.
+	 */
+	private void startSecondActivity(Intent intent){
+		//
+	}
+
+	/**
+	 *This method does something...
+	 * @param s is some string.
+	 *  The @return talks about the return values and its job.
+	 * @return THe return value is used for some job.
+	 * can document exception by @throws
+	 * @throws ...
+	 * @deprecated indicate method should not be used.
+	 */
+	public String someMethod(String s){
+		return "";
+	}
+	// No spacing between method name and parameters.
+	// closing braces are usually in line with beginning of the block
+	private boolean evaluateOtherActivity(Intent intent){
+
+		//Declaration at the very beginning
+		Intent intent1= new Intent();
+
+		//Always initialize the local variabels
+		String expression1 = "",expression2 = "",expression3 = "",expression4 = "";
+		startSecondActivity(intent1);
+
+		// This is how to indent method/lines that are too long
+		String s = someMethod(expression1 + expression2 + expression3
+		 					  + expression4);
+		someMethod(expression1 + expression2 + expression3 +
+				expression4);
+		//for (int i=0; i<10; i++); space between each sets.
+		try{
+			int a = 1;
+			int b = 2;
+
+			// Note one lien in if statment is fine without brackets, but better with it.
+			if (a<2) {
+				someMethod("first choice");
+			} else {
+				someMethod("Second choice");
+			}
+			while (1<2){
+				// If have instance variable, avoid having variable in loop with same name.
+				// JUst like no shadowing of variables.
+				// define variable at beginning of loop not after
+				// note out of the loop variables are out of scope.
+				int j=0;
+			}
+		}
+		catch(Exception e){}
+
+		return true;
+	}
+
 
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;

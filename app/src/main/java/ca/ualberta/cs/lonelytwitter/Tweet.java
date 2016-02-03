@@ -4,6 +4,7 @@ import java.util.Date;
 
 /**
  * Created by kliang on 1/12/16.
+ * This is the general tweet class that implements the methods
  */
 public abstract class Tweet{
     protected Date date;
@@ -26,6 +27,11 @@ public abstract class Tweet{
 
     }
 
+    /**
+     * This is a method that checks for number of characters entered,
+     * @param message
+     * @throws TweetTooLongException that tells it exceeds the count limit.
+     */
 
     public void setMessage(String message) throws Exception{
         if(message.length()>140){

@@ -4,6 +4,7 @@ import java.util.Date;
 
 /**
  * Created by kliang on 1/12/16.
+ * This is the regular tweet class. It has a few default getters/setters
  */
 public class NormalTweet extends Tweet implements Tweetable {
     public NormalTweet(String message, Date date) {

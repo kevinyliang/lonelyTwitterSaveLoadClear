@@ -13,6 +13,11 @@ import java.util.Date;
 public class TweetList {
     private ArrayList<Tweet> tweets =new ArrayList<Tweet>();
 
+    /**
+     * This adds tweets to the list, but it also checks for duplicate tweets
+     * @param tweet the tweets to be added.
+     * @throws IllegalArgumentException when adding duplicates
+     */
     public void add(Tweet tweet){
 
         if(tweets.contains(tweet)){
@@ -28,6 +33,10 @@ public class TweetList {
         return tweets.contains(tweet);
     }
 
+    /**
+     * This will sort the tweet list and will make it in chronological order
+     * @return Return the list sorted by dates in chronological order
+     */
     public ArrayList<Tweet> getTweet(){
         Collections.sort(tweets, new Comparator<Tweet>()  {
             public int compare(Tweet tweet1, Tweet tweet2) {
