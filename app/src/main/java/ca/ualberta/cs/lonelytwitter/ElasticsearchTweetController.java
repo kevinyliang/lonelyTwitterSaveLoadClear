@@ -60,15 +60,27 @@ public class ElasticsearchTweetController {
         @Override
         protected ArrayList<Tweet> doInBackground(String... queryArray) {
             verifyClient();
-            String query = "{\n" +
-                    "    \"query\": {\n" +
-                    "        \"mathc\" : { " + queryArray[0] +
-                    "    }\n" +
-                    "}";
+            String query = "{" +
+                    "    \"query\": {" +
+                    "        \"match\" :{ \"message\":\"" + queryArray[0]+ "\""+
+                    "    }" +
+                    "}}";
             ArrayList<Tweet> tweets = new ArrayList<Tweet>();
             Search search = new Search.Builder(query).
                                     addIndex("testing").
                                     addType("tweet").build();
+            //start initial array lsit empty.
+            try {
+                SearchResult execute = client.execute(search);
+                if (execute.isSucceeded()){
+                    //return list of things
+                    List<NormalTweet> returned_tweets = execute.getSourceAsObjectList(NormalTweet.class);
+                    tweets.addAll(returned_tweets);
+                }
+            } catch (IOException e) {
+                Log.i("TODO", "SEARCH PROBLEMS");
+            }
+
             return tweets;
         }
     }

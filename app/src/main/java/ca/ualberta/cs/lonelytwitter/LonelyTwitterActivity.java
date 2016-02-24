@@ -86,7 +86,8 @@ public class LonelyTwitterActivity extends Activity {
 
         try {
             stask.execute("senpai");
-            tweets = stask.get();
+            tweets.clear();
+            tweets.addAll(stask.get());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
